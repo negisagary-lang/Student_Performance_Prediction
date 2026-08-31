@@ -1,4 +1,4 @@
-# Student Performance Prediction Project 📚
+# Sagar's Project for Student Analysis 📚
 This project implements a machine learning solution to predict student academic performance based on various socio-demographic and academic factors. Using features like parental education, test preparation, and previous scores, the model predicts student performance in mathematics, helping educators identify students who might need additional support.
 
 ## Table of Contents
