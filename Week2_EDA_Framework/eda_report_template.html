@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDA Report Template - Student Performance Analysis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            color: #2d2d2d;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+        h1 { color: #1a3c6e; border-bottom: 3px solid #1a3c6e; padding-bottom: 10px; }
+        h2 { color: #2c5f8a; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 35px; }
+        h3 { color: #344e6b; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background-color: #1a3c6e; color: white; }
+        tr:nth-child(even) { background-color: #f2f6fb; }
+        pre {
+            background: #f4f4f4;
+            border-left: 4px solid #1a3c6e;
+            padding: 12px;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: Consolas; }
+        .callout {
+            background: #eef4fb;
+            border-left: 5px solid #1a3c6e;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .warning {
+            background: #fff7e6;
+            border-left: 5px solid #ed7d31;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        ul, ol { padding-left: 25px; }
+        .figure-placeholder {
+            background: #f9f9f9;
+            border: 2px dashed #ccc;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-style: italic;
+        }
+        .header { background: #1a3c6e; color: white; padding: 20px 30px; border-radius: 6px; margin-bottom: 25px; }
+        .header small { color: #cfe0f2; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1 style="color:#fff; border:none;">EDA Report — Student Performance Analysis &amp; Prediction</h1>
+        <small>Week 2 Task | Template | No real dataset used — illustrative only</small>
+    </div>
+
+    <!-- ================= EXECUTIVE SUMMARY ================= -->
+    <h2>1. Executive Summary</h2>
+    <p>
+        This report presents the <strong>Exploratory Data Analysis (EDA) and Visualization Framework</strong>
+        for the <em>Student Performance Analysis &amp; Prediction</em> project. The purpose of EDA is to
+        <strong>understand, clean, and summarize</strong> the dataset <em>before</em> machine learning modeling.
+    </p>
+    <p>
+        <strong>Important:</strong> No real dataset was provided for this week. All visualizations and figures
+        below are <em>placeholders</em> and no relationship between variables is claimed.
+    </p>
+
+    <!-- ================= DATASET OVERVIEW ================= -->
+    <h2>2. Dataset Overview</h2>
+    <p>The variables used in the design are <strong>illustrative</strong> and may be adapted to the final dataset:</p>
+    <table>
+        <tr><th>Variable</th><th>Data Type</th><th>Category</th><th>Description</th></tr>
+        <tr><td>Student_ID</td><td>Integer</td><td>Identifier</td><td>Unique identifier</td></tr>
+        <tr><td>Age</td><td>Integer</td><td>Discrete</td><td>Student age</td></tr>
+        <tr><td>Gender</td><td>Object</td><td>Nominal</td><td>Male / Female</td></tr>
+        <tr><td>Study_Hours</td><td>Numeric</td><td>Continuous</td><td>Hours studied per week</td></tr>
+        <tr><td>Attendance</td><td>Numeric</td><td>Continuous</td><td>Attendance percentage</td></tr>
+        <tr><td>Previous_Score</td><td>Numeric</td><td>Continuous</td><td>Prior exam score</td></tr>
+        <tr><td>Internet_Access</td><td>Object</td><td>Boolean-like</td><td>Yes / No</td></tr>
+        <tr><td>Final_Score</td><td>Numeric</td><td>Continuous</td><td>Target variable</td></tr>
+    </table>
+
+    <div class="callout">
+        <strong>Target variable:</strong> The primary outcome of interest is the <strong>Final Score</strong>,
+        which will be predicted using the other features in the modeling phase.
+    </div>
+
+    <!-- ================= DATA QUALITY ================= -->
+    <h2>3. Data Quality Assessment</h2>
+    <p>Quality checks to be performed on the real dataset include:</p>
+    <ul>
+        <li><strong>Missing values</strong> — identify and decide on treatment strategy.</li>
+        <li><strong>Duplicate records</strong> — detect and remove.</li>
+        <li><strong>Invalid values</strong> — range/logical checks (e.g., score &gt; 100).</li>
+        <li><strong>Outliers</strong> — detect using IQR / z-score, but do not auto-delete.</li>
+    </ul>
+
+    <h3>3.1 Example Code - Missing Values</h3>
+    <pre><code>import pandas as pd
+df = pd.read_csv("students.csv")
+print(df.isnull().sum())       # count missing per column
+print(df.duplicated().sum())   # count duplicates</code></pre>
+
+    <!-- ================= VISUALIZATIONS ================= -->
+    <h2>4. Proposed Visualizations</h2>
+    <p>The framework proposes the following visualizations for the real dataset. Each figure below is a <strong>placeholder</strong>.</p>
+
+    <h3>4.1 Final Score Distribution</h3>
+    <table>
+        <tr><th>Attribute</th><th>Value</th></tr>
+        <tr><td>Analysis Type</td><td>Univariate (Numerical)</td></tr>
+        <tr><td>Recommended Plot</td><td>Histogram + KDE</td></tr>
+        <tr><td>Purpose</td><td>Understand distribution shape and skew</td></tr>
+    </table>
+    <div class="figure-placeholder">[ Figure: Final Score Distribution histogram ]</div>
+
+    <h3>4.2 Study Hours vs Final Score</h3>
+    <table>
+        <tr><th>Attribute</th><th>Value</th></tr>
+        <tr><td>Analysis Type</td><td>Bivariate (Numerical-Numerical)</td></tr>
+        <tr><td>Recommended Plot</td><td>Scatter Plot + Regression line</td></tr>
+        <tr><td>Purpose</td><td>Explore association between study time and score</td></tr>
+    </table>
+    <div class="figure-placeholder">[ Figure: Study Hours vs Final Score scatter ]</div>
+
+    <h3>4.3 Correlation Heatmap</h3>
+    <table>
+        <tr><th>Attribute</th><th>Value</th></tr>
+        <tr><td>Analysis Type</td><td>Multivariate</td></tr>
+        <tr><td>Recommended Plot</td><td>Heatmap</td></tr>
+        <tr><td>Purpose</td><td>Compact view of all pairwise correlations</td></tr>
+    </table>
+    <div class="figure-placeholder">[ Figure: Correlation heatmap ]</div>
+
+    <!-- ================= ANALYSIS METHODOLOGY ================= -->
+    <h2>5. Key Observations &amp; Interpretation Framework</h2>
+    <p>For every important chart, findings should be documented using the framework:</p>
+    <table>
+        <tr><th>Step</th><th>Description</th></tr>
+        <tr><td><strong>Chart</strong></td><td>What chart was used</td></tr>
+        <tr><td><strong>Observation</strong></td><td>What is visually visible</td></tr>
+        <tr><td><strong>Interpretation</strong></td><td>What it means statistically</td></tr>
+        <tr><td><strong>Implication</strong></td><td>How it impacts modeling / decisions</td></tr>
+    </table>
+
+    <div class="warning">
+        <strong>Reminder:</strong> Correlation does <em>not</em> imply causation. This principle will be
+        respected when interpreting the real data.
+    </div>
+
+    <!-- ================= RECOMMENDATIONS ================= -->
+    <h2>6. Recommendations &amp; Next Steps</h2>
+    <ol>
+        <li>Obtain and load the real Student Performance dataset.</li>
+        <li>Run the full EDA framework on the actual data.</li>
+        <li>Document cleaning decisions for reproducibility.</li>
+        <li>Proceed to modeling phase using the insights gained.</li>
+    </ol>
+
+    <!-- ================= CONCLUSION ================= -->
+    <h2>7. Conclusion</h2>
+    <p>
+        This EDA framework provides a <strong>structured, reproducible, and reusable</strong> methodology for
+        understanding the dataset before modeling. The framework is ready to be applied to the actual
+        Student Performance dataset in the next phase.
+    </p>
+
+    <p style="margin-top:40px; font-size:12px; color:#888; text-align:center;">
+        Week 2 Internship Deliverable | EDA &amp; Visualization Framework | [Student Name]
+    </p>
+
+</body>
+</html>
